@@ -1,0 +1,22 @@
+---
+dependencies:
+  - {role: geerlingguy.repo-epel, when: use_geerlingguy_repo_epel | default(true)}
+  - {role: davidalger.selinux, when: use_davidalger_selinux | default(true)}
+
+galaxy_info:
+  role_name: nginx
+  author: David Alger
+  description: Installs nginx service from EPEL RPMs on RHEL / CentOS 7
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 6
+
+  galaxy_tags:
+    - system
+    - nginx
+    - magento

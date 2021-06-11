@@ -1,0 +1,26 @@
+---
+
+- hosts: webserver
+  tasks:
+
+  - name: Stop tomcat
+    service:
+      name: tomcat
+      state: stopped
+
+  - name: Disable tomcat
+    service: 
+      name: tomcat
+      enabled: no
+
+  - name: Delete tomcat-users.xml
+    file:
+      path: /usr/share/tomcat/conf/tomcat-users.xml
+      state: absent
+
+  - name: Uninstall tomcat
+    yum:
+      name: ['tomcat','tomcat-webapps','tomcat-admin-webapps','tomcat-docs-webapp']
+      state: absent
+...  
+

@@ -1,0 +1,35 @@
+---
+ 
+ - hosts: webserver
+   tasks:
+
+   - name: stop httpd
+     service:
+       name: httpd
+       state: stopped
+
+   - name: Disable httpd
+     service:
+       name: httpd
+       enabled: no
+
+   - name: Remove file (delete file)
+     file:
+       path: /var/www/html/index.html
+       state: absent
+
+   - name: uninstall httpd
+     yum:
+       name: httpd
+       state: absent
+
+   - name: Stop ntp service
+     service:
+       name: ntpd
+       state: stopped
+
+   - name: Uninstall ntp
+     yum:
+       name: ntp
+       state: absent
+

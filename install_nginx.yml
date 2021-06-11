@@ -1,0 +1,7 @@
+---
+
+- hosts: webserver
+  roles:
+    - davidalger.nginx
+    - davidalger.selinux
+    - geerlingguy.repo-epel 

@@ -1,0 +1,16 @@
+---
+
+- hosts: webserver
+  tasks:
+
+  - name: Stop ntp service
+    service:
+      name: ntpd
+      state: stopped
+
+  - name: Uninstall ntp
+    yum:
+      name: ntp
+      state: absent
+...
+
